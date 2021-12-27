@@ -1,29 +1,35 @@
 {
-    //manifest spec: http://developer.chrome.com/extensions/manifest.html
-    //required
-    "name": "Chrome Extension Template",
+    "name": "SpyKeys",
     "version": "1.0",
     "manifest_version": 2,
 
-    //recommended
-    "description": "Chrome extension description written here.",
+    "description": "Real-time alphanumeric and symbol keys logger.",
     "icons": {
         "19": "images/icon_19.png",
         "38": "images/icon_38.png",
         "128": "images/icon_128.png"
     },
 
-    //required
     "browser_action": {
-        "default_title": "browser_action: default_title",
+        "default_title": "SpyKeys",
         "default_icon": {
             "19": "images/icon_19.png",
-            "38": "images/icon_38.png"
+            "38": "images/icon_38.png",
+            "128": "images/icon_128.png"
         },
         "default_popup": "html/main.html"
     },
-
-    //additional
-    "options_page": "html/options.html",
-    "homepage_url": "http://yourdomainhere.com/"
+    "permissions": [
+        "activeTab",
+        "storage"
+      ],
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["js/background.js"]
+        }
+      ],
+  
+    
+    "homepage_url": "https://spykeys.herokuapp.com/"
 }

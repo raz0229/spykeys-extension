@@ -1,24 +1,54 @@
 <html>
     <head>
-        <!-- load stylesheets: Bootstrap v2.3.0 - http://twitter.github.com/bootstrap/index.html -->
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"></link>
+        <meta charset="UTF-8">
+        <!-- load stylesheets: Materialize CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/materialize.min.css"></link>
 
         <!-- load javascript: jQuery 1.9.1 - http://jquery.com/ -->
         <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
 
-        <!-- load javascript: Bootstrap v2.3.0 - http://twitter.github.com/bootstrap/ -->
-        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <!-- load javascript: Materialze JS -->
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
 
         <!-- load stylesheets: internal -->
         <link rel="stylesheet" type="text/css" href="../css/global.css"></link>
         <link rel="stylesheet" type="text/css" href="../css/main.css"></link>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>
     <body>
         <div id="main-outer">
             <div id="main-inner">
-                <div id="main-title">Chrome Extension Template v1.0</div>
-                <img id="main-image" src="../images/tsheets_logo.png" />
-                <div id="main-about-text">A sample project for kickstarting your next Chrome browser extension.</div>
+                <div id="main-title" style="color: #3f51b5;">Spy Keys v1.0</div>
+                <div id="cf">
+                    <img id="main-image" class="top" src="../images/spy-keys-logo.png">
+                    <img id="main-image2" class="bottom transparent" src="../images/spy-keys-logo-closed.png" />
+                </div>
+
+                <div class="center">
+                    <span class="material-icons power_button cc-gray">
+                        power_settings_new
+                        </span>
+                </div>
+                <div id="buttonColl" class="center" style="text-align: -webkit-center;">
+                    <button id="copy-button" class="bouton"><span class="material-icons">
+                        content_copy
+                        </span>&#3164;Copy Key</button>
+                    <button id="view-button" class="bouton"><span class="material-icons">
+                        data_array
+                        </span>&#3164;View Logs</button>
+                    <button id="delete-button" class="bouton red-grad"><span class="material-icons">
+                        clear
+                        </span>&#3164;Delete Data</button>
+                </div>
+
+                <div id="main-about-text">Buy the developer a Coffee 👉 <a href="https://www.buymeacoffee.com/raz0229" target="_blank" style="color:#3f51b5;"><em><b>@raz0229</b></em></a>.</div>
+                <div class="center" style="position: absolute; margin-top: 15px">
+                    <img style="width: 75%;" src="../images/cat_pointing.png" alt="insert cute cat here">
+                </div>
             </div>
         </div>
 
