@@ -8,7 +8,7 @@
         <div><b>Updated:</b> 2021.12.26</div>
         <div><b>Description:</b> Real-time alphanumeric and symbol keys logger.
         Users have complete access to their data. Synced with remote database so your data can be accessed anywhere.</div>
-        <div><b>View Logs:</b> https://spykeys.herokuapp.com</div>
+        <div><b>View Logs:</b> https://spykeys.vercel.app</div>
         <div><b>Bundled Software / Libraries:</b></div>
         <div>
             <ul>

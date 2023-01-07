@@ -48,7 +48,7 @@ document.querySelector('.power_button').addEventListener('click', () => {
             } else {
                 $('.center > span').css('pointer-events', 'none'); // disabling click on power button
                 M.toast({ html: '🐱 Catcalling the server...' })
-                fetch('https://api-spykeys.herokuapp.com/gennew').then(res =>
+                fetch('https://api-spykeys.vercel.app/gennew').then(res =>
                     res.text()
                 ).catch(err => M.toast({ html: '😵‍💫 Internet Connection Error' })).then(r => {
                     console.log(r)
@@ -86,7 +86,7 @@ document.querySelector('#copy-button').addEventListener('click', () => {
 
 document.querySelector('#view-button').addEventListener('click', () => {
     chrome.storage.sync.get(["SPYKEYS_SUBSCRIBED_X-API-KEY"], function (items) {
-        let url = `https://spykeys.herokuapp.com?apiKey=${items['SPYKEYS_SUBSCRIBED_X-API-KEY']}`;
+        let url = `https://spykeys.vercel.app?apiKey=${items['SPYKEYS_SUBSCRIBED_X-API-KEY']}`;
         window.open(url, '_blank').focus();
     })
 })
@@ -134,18 +134,18 @@ function togglePower() {
 
     let x = document.querySelector('.power_button');
     if (SPYKEYS_SUBSCRIBED_CLICKED) {
-        chrome.browserAction.setIcon({
+        chrome.action.setIcon({
             path: {
                 "19": "/images/icon_19.png",
                 "38": "/images/icon_38.png", "128": "/images/icon_128.png"
             }
         });
-        chrome.browserAction.setBadgeText({ text: 'ON' });
+        chrome.action.setBadgeText({ text: 'ON' });
         x.classList.remove('cc-gray')
         x.classList.add('cc-green')
     } else {
-        chrome.browserAction.setBadgeText({ text: 'OFF' });
-        chrome.browserAction.setIcon({
+        chrome.action.setBadgeText({ text: 'OFF' });
+        chrome.action.setIcon({
             path: {
                 "19": "/images/icon_19_disabled.png",
                 "38": "/images/icon_38_disabled.png", "128": "/images/icon_128_disabled.png"
@@ -158,7 +158,7 @@ function togglePower() {
 
 async function removeKey(api = 'xxx') {
 
-    const response = await fetch('https://api-spykeys.herokuapp.com/removeKey', {
+    const response = await fetch('https://api-spykeys.vercel.app/removeKey', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',

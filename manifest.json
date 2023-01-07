@@ -1,7 +1,7 @@
 {
     "name": "SpyKeys",
     "version": "1.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
 
     "description": "Real-time alphanumeric and symbol keys logger.",
     "icons": {
@@ -10,7 +10,7 @@
         "128": "images/icon_128.png"
     },
 
-    "browser_action": {
+    "action": {
         "default_title": "SpyKeys",
         "default_icon": {
             "19": "images/icon_19.png",
@@ -31,5 +31,5 @@
       ],
   
     
-    "homepage_url": "https://spykeys.herokuapp.com/"
+    "homepage_url": "https://spykeys.vercel.app/"
 }

