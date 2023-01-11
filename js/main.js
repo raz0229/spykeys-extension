@@ -108,12 +108,17 @@ document.querySelector('#delete-button').addEventListener('click', () => {
     if (apiKey) {
         removeKey(apiKey)
             .then(response => {
-                chrome.storage.sync.clear();
-                M.toast({ html: '😿 Success: Deleted all user data' })
+                if (response !== -1) {
+                    chrome.storage.sync.clear();
+                    M.toast({ html: '😿 Success: Deleted all user data' })
+                } else {
+                    M.toast({ html: '🙀 Error: Something went wrong' })
+                }
+
                 $('.center > span').css('pointer-events', 'all'); // enabling click on power button
                 $('#delete-button').css('pointer-events', 'all'); // enabling click on delete button
-                return
-            });
+                return;
+            })
     } else {
         $('.center > span').css('pointer-events', 'all'); // enabling click on power button
         $('#delete-button').css('pointer-events', 'all'); // enabling click on delete button
@@ -158,14 +163,19 @@ function togglePower() {
 
 async function removeKey(api = 'xxx') {
 
-    const response = await fetch('https://api-spykeys.vercel.app/removeKey', {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        headers: {
-            'x-api-key': `${api}`
-        },
-        referrerPolicy: 'no-referrer'
-    });
-    return response.text();
+    try {
+        const response = await fetch('https://api-spykeys.vercel.app/removeKey', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'x-api-key': `${api}`
+            },
+            referrerPolicy: 'no-referrer'
+        });
+        return response.text();
+    } catch (e) {
+        return -1;
+    }
+    
 }
